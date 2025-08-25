@@ -19,12 +19,12 @@ function handleNormalLogin(e) {
 }
 
 function handleOauthLogin() {
-  const url = "http://localhost:3000/user-auth/login?isEmbedded&Oauth&parent_origin=" + window.location.hostname;
+  const url = "https://app.demo.eaera.com/user-auth/login?isEmbedded&Oauth&parent_origin=" + window.location.hostname;
   window.open(url, "oauthPopup", "width=425,height=700");
 }
 
 function handleEaeraMessage(event) {
-  if (event.origin !== "http://localhost:3000") return;
+  if (event.origin !== "https://app.demo.eaera.com") return;
   const { user, access_token } = event.data?.data || {};
   if (user && access_token) {
     alert(`Login successful!`);
