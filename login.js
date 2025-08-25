@@ -27,10 +27,9 @@ function handleEaeraMessage(event) {
   if (event.origin !== "https://app.demo.eaera.com") return;
   const { user, access_token } = event.data?.data || {};
   if (user && access_token) {
-    alert(`Login successful!`);
     console.log("User:", user);
     console.log("Token:", access_token);
   } else {
-    alert("Login failed or cancelled.");
+    alert("OAuth login failed. Please try again.");
   }
 }
